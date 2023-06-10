@@ -1,0 +1,74 @@
+[     
+{
+    "Fasilitas" : "ADAS (Advanced Driver Assistance Systems)",
+    "Deskripsi" : "ADAS adalah sistem sensor dan elektronik yang dapat membantu pengemudi dalam mengemudi dengan aman dan nyaman. Kamera pengawas jalan dengan teknologi AI untuk memberikan peringatan alarm awal.",
+    "Gambar" : "img/1.jpg",
+    "Kegunaan" : "Fungsi Advance Driver Assistance System dilengkapi dengan berbagai fitur yang dapat membantu mengurangi risiko kecelakaan dan meningkatkan keselamatan pengemudi dan penumpang."
+},
+{
+    "Fasilitas" : "APC (Automatic Passenger Counting)",
+    "Deskripsi" : "APC adalah perangkat penghitung jumlah penumpang bus berteknologi AI dengan akurasi yang sangat tinggi.",
+    "Gambar" : "img/2.jpg",
+    "Kegunaan" : "Funggsi APC untuk penghitungan penumpang otomatis, untuk mengetahui kapan dan berapa banyak penumpang yang perlu ditangani oleh setiap kendaraan."
+},
+{
+    "Fasilitas" : "Led Running Text",
+    "Deskripsi" : "LED Running Text adalah sebuah teknik elektronik yang menampilkan sebuah tulisan bergerak atau berjalan yang terdiri dari susunan LED kemudian terhubung secara matrix dengan perpaduan LED antara baris dan kolomnya.",
+    "Gambar" : "img/3.jpg",
+    "Kegunaan" : "Fungsinya untuk media informasi, sarana iklan, dan juga sebagai penunjuk waktu yang dapat menampilkan detik, menit, jam, hari dan tanggal."
+},
+{
+    "Fasilitas" : "DSM (Driver Safety Monitoring",
+    "Deskripsi" : "Driver Monitoring System (DMS) adalah teknologi yang digunakan dalam kendaraan untuk memonitor aktivitas dan perilaku pengemudi. Sistem ini biasanya menggunakan kamera dan sensor yang terletak di dalam kabin kendaraan untuk mendeteksi aktivitas pengemudi seperti gerakan kepala, posisi tubuh, dan kehadiran pengemudi di kursi.",
+    "Gambar" : "img/4.jpg",
+    "Kegunaan" : "DMS dapat membantu mengurangi risiko kecelakaan karena dapat mendeteksi tanda-tanda kelelahan, ketidaksengajaan, dan gangguan pengemudi lainnya. DMS juga dapat digunakan untuk mengumpulkan data tentang perilaku pengemudi dan digunakan untuk membantu perusahaan mengembangkan program pelatihan atau program pencegahan kecelakaan."
+},
+{
+    "Fasilitas" : "TOB (Tap On Bus)",
+    "Deskripsi" : "TOB ini membaca pembayaran non tunai (kartu non tunai, e-Money dan QR Code) yang dilakukan penumpang saat naik (tap in)",
+    "Gambar" : "img/5.jpg",
+    "Kegunaan" : "Fasilitas tap on bus (TOB) digunakan untuk memudahkan penumpang saat tap in dan tap out."
+},
+{
+    "Fasilitas" : "iButton",
+    "Deskripsi" : "Ibutton adalah perangkat dengan microchip yang terbungkus dalam kandang stainless steel yang tahan lama berukuran tebal 16 mm dan dimaksudkan menyerupai tombol.",
+    "Gambar" : "img/6.jpg",
+    "Kegunaan" : "Fungsi dari iButton ini sebagai absensi untuk mendata pengemudi yang sedang bertugas."
+},
+{
+    "Fasilitas" : "MDVR (Mobile Digital Video Recorder)",
+    "Deskripsi" : "MDVR adalah alat yang digunakan untuk mengontrol situasi dan kondisi kendaraan saat berkendara dan juga mengontrol situasi, kondisi dan perilaku pengemudi yang sedang mengemudi.",
+    "Gambar" : "img/7.jpg",
+    "Kegunaan" : "MDVR ini berfungsi untuk merekam video dalam format digital dan disimpan ke media penyimpanan lokal atau cloud server."
+},
+{
+    "Fasilitas" : "Blind Spot Detection Camera (With AI)",
+    "Deskripsi" : "Blind spot monitor atau blind spot detector adalah fitur keselamatan yang dapat membantu pengemudi mobil untuk memonitor bagian mobil yang tidak bisa terlihat dengan mata kepalanya.",
+    "Gambar" : "img/8.jpg",
+    "Kegunaan" : "Fungsi dari fitur ini adalah untuk memperingatkan pengemudi ketika ada kendaraan yang sedang mendekat."
+},
+{
+    "Fasilitas" : "High Definition Small Dome Camera",
+    "Deskripsi" : "Kamera CCTV di dalam armada bus dengan sudut normal dan lebar yang memiliki sensor siang/malam (ICR), digital noise filter dan rentang dinamis.",
+    "Gambar" : "img/9.jpg",
+    "Kegunaan" : "Fungsinya adalah dapat menangkap video walaupun dalam kegelapan total dan dapat menangkap kualitas video yang lebih baik dalam kondisi pada saat cahaya rendah."
+},
+{
+    "Fasilitas" : "Indicator R-Watch",
+    "Deskripsi" : "Perangkat sensor dengan teknologi AI yang memberikan indikator informasi mengenai perilaku atau cara mengemudi yang dilengkapi alarm.",
+    "Gambar" : "img/10.jpg",
+    "Kegunaan" : "Fungsinya untuk memberikan peringatan awal jika armada kendaraan terdeteksi menyimpang dari jalur, melewati batas kecepatan ataupun jika terjadi potensi tabrakan depan."
+},
+{
+    "Fasilitas" : "CP4 Multi-Functions Touch Panel",
+    "Deskripsi" : "CP4 Multi-Functions Touch Panel adalah panel sentuh multifungsi yang ada di panel dashboard bus.",
+    "Gambar" : "img/11.jpg",
+    "Kegunaan" : "Kegunaan dari fitur ini adalah membaca kartu saat pengemudi beroperasi, media komunikasi satu arah dari pengemudi ke penumpang, dan controll blackbox."
+},
+{
+    "Fasilitas" : "GPS (Global Positioning System",
+    "Deskripsi" : "GPS, atau Global Positioning System, adalah sistem satelit navigasi global yang menyediakan sinkronisasi lokasi, kecepatan, dan waktu.",
+    "Gambar" : "img/12.jpg",
+    "Kegunaan" : "Berfungsi untuk memberikan posisi dan kecepatan tiga-dimensi serta informasi mengenai waktu, secara kontinyu di seluruh dunia tanpa bergantung waktu dan cuaca, kepada banyak orang secara simultan."
+}
+]

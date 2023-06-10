@@ -244,13 +244,14 @@
 /* Bagian Blog and News */
 /*--blog--------------------------*/
 #blog{
+    background-color: #fbf3eb;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
 }
 .blog-heading{
     display: flex;
