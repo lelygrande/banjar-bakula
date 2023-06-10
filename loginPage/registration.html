@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bus Trans Banjarbakula</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <form id="authForm">
+                <h1>Registrasi</h1>
+                <hr>
+                <Label for="username">Nama</Label>
+                <input id="username" name="username" placeholder="Username" type="text">
+
+                <Label for="userEmail">Email</Label>
+                <input id="userEmail" name="email" type="email" placeholder="example@gmail.com">
+
+                <label for="userPassword">Password</label>
+                <input id="userPassword" name="password" type="password" placeholder="password">
+
+                <button id="signUpBuutton" class="submit" type="submit" name="signup_submit">Registrasi</button>
+        
+                <p>Belum punya akun? <a href="http://127.0.0.1:3000/Website Trans Banjarbakula/login Page/loginpage.html">Registrasi</a></p>
+            </form>
+        </div>
+        <div class="right">
+            <img src="bis.png" alt="">
+        </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";;
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUUEkcmp4w6Tnot4pAeVla4ShiGG4-D3c",
+            authDomain: "dreamy-grande.firebaseapp.com",
+            databaseURL: "https://dreamy-grande-default-rtdb.firebaseio.com",
+            projectId: "dreamy-grande",
+            storageBucket: "dreamy-grande.appspot.com",
+            messagingSenderId: "787624931309",
+            appId: "1:787624931309:web:e5c3e8b5518a753f6381e4",
+            measurementId: "G-GXV5X1V4G3"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+        
+        const userEmail = document.querySelector('#userEmail');
+        const userPassword = document.querySelector('#userPassword');
+        const username = document.querySelector('#username');
+        const authForm = document.querySelector('##authForm');
+        const signUpButton = document.querySelector('#signUpButton')
+        
+        const userSignUp = async() => {
+            const signUpEmail = userEmail.value;
+            const signUpPassword = userPassword.value;
+    
+            createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+            .then(userCredential => {
+            // Signed in
+            const user = userCredential.user;
+    
+            console.log(user)
+    
+            set(ref(database, 'users/' + user.uid), {
+                username: username,
+                email: email
+            });
+    
+            alert('Akun berhasil dibuat! Silakan login')
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + errorMessage)
+    
+                alert(errorMessage);
+            });
+        }
+
+        signUpButton.addEventListener('click', userSignUp)
+    
+    </script>
+</body>
+</html>
+
+ 
