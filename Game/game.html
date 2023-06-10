@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - Trans Banjarbakula</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    body {
+        background: url(background_kota.png) no-repeat center;
+        background-size: cover;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow-y: hidden;
+
+    }
+
+    #jalan {
+        /* border: 2px solid red; */
+        background: url(jalan.png) repeat-y;
+        height: 1200vh;
+        width: 53vw;
+        position: relative;
+        top: -80vh;
+        z-index: -9;
+        animation: jalananimation infinite 20s linear;
+    }
+
+    #mulai{
+        position: absolute;
+        z-index: 100;
+        font-size: 1rem;
+        background-color: rgb(55, 254, 165) ;
+        color: rgb(255, 255, 255);
+        padding: 7px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    #backbtn{
+        position:absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 1rem;
+        padding: 7px;
+        background-color: rgb(6, 48, 19);
+        color: white;
+        font-weight: 500;
+        border-radius: 3px;
+    }
+    #backbtn a {
+        text-decoration: none;
+        color: aliceblue;
+    }
+
+    #game-text {
+        position:absolute;
+        top: 100px;
+        right: 30px;
+        font-size: 1rem;
+        padding: 7px;
+        width: 200px;
+        background-color: rgb(6, 48, 19);
+        color: white;
+    }
+    #game-instruksi {
+        position:absolute;
+        top: 200px;
+        right: 30px;
+        font-size: 1rem;
+        padding: 7px;
+        width: 200px;
+        background-color: rgb(6, 48, 19);
+        color: white;
+    }
+    #score{
+        position:absolute;
+        top: 80px;
+        left: 30px;
+        font-size: 1.5rem;
+        padding: 7px;
+        background-color: rgb(6, 48, 19);
+        color: white;
+        font-weight: 500;
+        border-radius: 3px;
+    }
+
+    #mobillawan1 {
+        /* display: grid; */
+        /* place-items: center; */
+        position: relative;
+        width: 100px;
+        height: 100px;
+        left: 310px;
+        /* left: 230px; */
+        z-index: 1001;
+    }
+
+    #mobillawan2 {
+        /* display: grid;
+        place-items: center; */
+        position: relative;
+        width: 100px;
+        height: 100px;
+        left: 100px;
+        /* left: 150px; */
+        z-index: 1001;
+        /* animation: mob2 infinite linear 4s; */
+
+    }
+
+    #mobillawan3 {
+        /* display: grid;
+        place-items: center; */
+        position: relative;
+        width: 100px;
+        height: 100px;
+        left: -100px;
+        /* left: -50px; */
+        /* left: -140px; */
+        z-index: 1001;
+        /* animation: mob3 infinite linear 6s; */
+
+    }
+
+    #mobillawan4 {
+        /* display: grid;
+        place-items: center; */
+        position: relative;
+        width: 100px;
+        height: 100px;
+        left: -300px;
+        /* left: -330px; */
+        /* left: -220px; */
+        top: -250px;
+        z-index: 1001;
+        /* animation: mob4 infinite linear 2s; */
+
+    }
+
+    .gambarmobil {
+        width: 80px;
+        /* border: 2px solid red; */
+    }
+
+    .gambarbus {
+        /* border: 2px solid red; */
+        width: 80px;
+    }
+
+    #busbjrbkla {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 15vh;
+    }
+
+    @keyframes mob1 {
+        0% {
+            top: -30vh;
+
+        }
+
+        100% {
+            top: 100vh;
+        }
+    }
+
+    @keyframes mob2 {
+        0% {
+            top: -50vh;
+
+        }
+
+        100% {
+            top: 100vh;
+        }
+    }
+
+    @keyframes mob3 {
+        0% {
+            top: -60vh;
+
+        }
+
+        100% {
+            top: 100vh;
+        }
+    }
+
+    @keyframes mob4 {
+        0% {
+            top: -80vh;
+
+        }
+
+        100% {
+            top: 100vh;
+        }
+    }
+
+    @keyframes jalananimation {
+        0% {
+            top: -1100vh;
+
+        }
+
+        100% {
+            top: -200vh;
+        }
+    }
+</style>
+
+<body>
+    <button id="backbtn"><a href="/websiteProjek.html">Kembali ke Home</a></button>
+    <div id="score">Score : 0</div>
+    <button id="mulai">Mulai</button>
+    <div id="game-text">Klik tombol W, A, S, dan D untuk menjalankan mobil</div>
+    <div id="game-instruksi">W = Atas <br> A = Kiri <br> D = Kanan <br> S = Bawah</div>
+
+    <div>
+        <div id="mobillawan1"><img id="gambarmobil1" class="gambarmobil" src="mobil1.png" alt="mobillawan"></div>
+        <div id="mobillawan2"><img id="gambarmobil2" class="gambarmobil" src="mobil2.png" alt="mobillawan"></div>
+        <div id="mobillawan3"><img id="gambarmobil3" class="gambarmobil" src="mobil1.png" alt="mobillawan"></div>
+        <div id="mobillawan4"><img id="gambarmobil4" class="gambarmobil" src="mobil2.png" alt="mobillawan"></div>
+    </div>
+
+    <div id="busbjrbkla"><img id="gambarbus" class="gambarbus" src="bus-transbjbkl.png" alt=""></div>
+    <div id="jalan"></div>
+
+
+</body>
+
+<script>
+
+
+    document.getElementById("mulai").addEventListener("click", function () {
+
+        document.getElementById("mulai").style.display = 'none'
+        document.getElementById("jalan").style.animation = 'jalananimation 20s linear infinite'
+
+
+        setInterval(() => {
+            num = Math.floor(Math.random() * (350 - 230 + 1) + 230)
+            document.getElementById("mobillawan1").style.left = `${num}px`
+
+        }, 3000)
+        setInterval(() => {
+            num = Math.floor(Math.random() * (150 - 50 + 1) + 50)
+            document.getElementById("mobillawan2").style.left = `${num}px`
+
+        }, 6000)
+        setInterval(() => {
+            num = Math.floor(Math.random() * (-50 + 140 + 1) - 140)
+            document.getElementById("mobillawan3").style.left = `${num}px`
+
+        }, 5000)
+        setInterval(() => {
+            num = Math.floor(Math.random() * (-220 + 330 + 1) - 330)
+            document.getElementById("mobillawan4").style.left = `${num}px`
+
+        }, 4000)
+
+
+        document.getElementById("mobillawan1").style.animation = 'mob1 3s linear infinite'
+        document.getElementById("mobillawan2").style.animation = 'mob2 6s linear infinite'
+        document.getElementById("mobillawan3").style.animation = 'mob3 5s linear infinite'
+        document.getElementById("mobillawan4").style.animation = 'mob4 4s linear infinite'
+
+
+        let t = 15
+        let l = 0
+
+        //KeyCode untuk atas kiri kanan bawah
+
+        window.addEventListener("keydown", function (x) {
+            // atas = w
+            if (x.keyCode == 87) {  
+                t = t - 3
+            }
+            // kiri = a
+            if (x.keyCode == 65) {
+                l = l - 1
+            }
+            // kanan = d
+            if (x.keyCode == 83) {
+                t = t + 3
+            }
+            // bawah = s
+            if (x.keyCode == 68) {
+                l = l + 1
+            }
+            document.getElementById("busbjrbkla").style.top = `${t}vh`
+            document.getElementById("busbjrbkla").style.left = `${l}vw`
+        })
+
+        n = 0
+        setInterval(() => {
+
+            document.getElementById("score").innerText = `Score : ${n}`
+            n = n + 1
+
+
+
+            var mob1_left = Math.abs(document.getElementById("gambarmobil1").getBoundingClientRect().left);
+            var mob1_right = Math.abs(document.getElementById("gambarmobil1").getBoundingClientRect().right);
+            var mob1_top = Math.abs(document.getElementById("gambarmobil1").getBoundingClientRect().top);
+            var mob1_bottom = Math.abs(document.getElementById("gambarmobil1").getBoundingClientRect().bottom);
+
+            var mob2_left = Math.abs(document.getElementById("gambarmobil2").getBoundingClientRect().left);
+            var mob2_right = Math.abs(document.getElementById("gambarmobil2").getBoundingClientRect().right);
+            var mob2_top = Math.abs(document.getElementById("gambarmobil2").getBoundingClientRect().top);
+            var mob2_bottom = Math.abs(document.getElementById("gambarmobil2").getBoundingClientRect().bottom);
+
+            var mob3_left = Math.abs(document.getElementById("gambarmobil3").getBoundingClientRect().left);
+            var mob3_right = Math.abs(document.getElementById("gambarmobil3").getBoundingClientRect().right);
+            var mob3_top = Math.abs(document.getElementById("gambarmobil3").getBoundingClientRect().top);
+            var mob3_bottom = Math.abs(document.getElementById("gambarmobil3").getBoundingClientRect().bottom);
+
+            var mob4_left = Math.abs(document.getElementById("gambarmobil4").getBoundingClientRect().left);
+            var mob4_right = Math.abs(document.getElementById("gambarmobil4").getBoundingClientRect().right);
+            var mob4_top = Math.abs(document.getElementById("gambarmobil4").getBoundingClientRect().top);
+            var mob4_bottom = Math.abs(document.getElementById("gambarmobil4").getBoundingClientRect().bottom);
+
+            var busbjrbkla_left = Math.abs(document.getElementById("gambarbus").getBoundingClientRect().left);
+            var busbjrbkla_right = Math.abs(document.getElementById("gambarbus").getBoundingClientRect().right);
+            var busbjrbkla_top = Math.abs(document.getElementById("gambarbus").getBoundingClientRect().top);
+            var busbjrbkla_bottom = Math.abs(document.getElementById("gambarbus").getBoundingClientRect().bottom);
+
+
+            if (busbjrbkla_left < 300 || busbjrbkla_right > 1130 || busbjrbkla_top < 20 || busbjrbkla_bottom > 690) {
+                setTimeout(() => {
+                    alert(`GAME OVER!`)
+                })
+                location.reload()
+
+            }
+            if (((mob1_left < busbjrbkla_left && busbjrbkla_left < mob1_right) || (mob1_left < busbjrbkla_right && busbjrbkla_right < mob1_right)) && ((mob1_top < busbjrbkla_top && busbjrbkla_top < mob1_bottom) || (mob1_top < busbjrbkla_bottom && busbjrbkla_bottom < mob1_bottom))) {
+
+                setTimeout(() => {
+                    alert(`GAME OVER!`)
+                })
+                location.reload()
+
+            }
+            if (((mob2_left < busbjrbkla_left && busbjrbkla_left < mob2_right) || (mob2_left < busbjrbkla_right && busbjrbkla_right < mob2_right)) && ((mob2_top < busbjrbkla_top && busbjrbkla_top < mob2_bottom) || (mob2_top < busbjrbkla_bottom && busbjrbkla_bottom < mob2_bottom))) {
+
+                setTimeout(() => {
+                    alert(`GAME OVER!`)
+                })
+                location.reload()
+
+            }
+            if (((mob3_left < busbjrbkla_left && busbjrbkla_left < mob3_right) || (mob3_left < busbjrbkla_right && busbjrbkla_right < mob3_right)) && ((mob3_top < busbjrbkla_top && busbjrbkla_top < mob3_bottom) || (mob3_top < busbjrbkla_bottom && busbjrbkla_bottom < mob3_bottom))) {
+
+                setTimeout(() => {
+                    alert(`GAME OVER!`)
+                })
+                location.reload()
+
+            }
+            if (((mob4_left < busbjrbkla_left && busbjrbkla_left < mob4_right) || (mob4_left < busbjrbkla_right && busbjrbkla_right < mob4_right)) && ((mob4_top < busbjrbkla_top && busbjrbkla_top < mob4_bottom) || (mob4_top < busbjrbkla_bottom && busbjrbkla_bottom < mob4_bottom))) {
+
+                setTimeout(() => {
+                    alert(`GAME OVER!`)
+                })
+                location.reload()
+
+            }
+
+
+        }, 100)
+
+
+
+    })
+
+</script>
+
+</html>
