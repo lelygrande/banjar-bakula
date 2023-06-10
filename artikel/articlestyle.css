@@ -1,0 +1,341 @@
+/* Mengimport font poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navigasi {
+    overflow: hidden;
+    background-color: #F7FFDF;
+    top: 0;
+  }
+  
+.navigasi a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.pages a {
+    padding: 20px;
+}
+.pages a:first-child {
+    margin-left: 60px;
+}
+.navigasi a:hover {
+    color: #61f0a1;
+}
+  
+.navigasi a.active {
+    background-color: #F7FFDF;
+}
+.navigasi a.active img {
+    width: 150px;
+}
+.navigasi .icon {
+    display: none;
+}
+
+body {
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+p {
+    font-size: 1.2 rem;
+}
+
+.container {
+    width: 96%;
+    max-width: 117rem;
+    margin: 0 auto;
+}
+
+.hero {
+    max-width: 144rem;
+    height: 400px;
+    background: url(https://kopma.uns.ac.id/wp-content/uploads/2015/07/green-background-2_00450547.jpg) 
+    no-repeat center center / cover;
+    margin: 1rem auto;
+}
+
+main {
+    width: 100%;
+    max-width: 60rem;
+    background-color: white;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    margin-top: -15rem;
+}
+main h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+main .profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+main .profile-container .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .profile-container .profile .img-container {
+    width: 3rem;
+    height: 3rem;
+    background: url(img/AvatarMaker.png) no-repeat
+    center center / cover; 
+    border-radius: 5px;
+}
+main .profile-container .profile .text {
+    margin: 0 1rem;
+    color: rgb(80, 59, 59);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.btn {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    padding: 0.3rem 1.5rem;
+    background-color: rgb(28, 214, 59);
+    border-radius: 0.2rem;
+}
+main .content p {
+    color: black;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+main .content h4 {
+    font-size: 1rem;
+    color: #5b5963;
+    font-weight: 600;
+    margin: 1.5rem 0;
+}
+
+main .content .content-img-container {
+    width: 100%;
+    height: 455px;
+    background: url(/img/indicator.png)
+    no-repeat center center / cover;
+}
+
+blockquote {
+    font-size: 1.2rem;
+    padding: 13px 26px;
+    line-height: 1.5;
+    font-weight: 300;
+    box-shadow: inset 6px 0 0 #0ccf57;
+    background-color: #f5f5f5;
+}
+.tags {
+    display: flex;
+    align-items: center;
+}
+.tags p {
+    font-size: 18px;
+}
+.tags a {
+    display: inline-block;
+    padding: 3px 16px;
+    background-color: #f5f5f5;
+    margin: 0 6px;
+}
+
+.articles {
+    width: 100%;
+    background-color: #f5f5f5;
+    margin: 5rem 0;
+    padding: 5rem 2rem;
+}
+.articles .article-heading {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+.article-heading h5 {
+    font-size: 8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    position: relative;
+    color: rgb(223, 214, 214);
+}
+.article-heading h6 {
+    font-size: 2rem;
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+ 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+ 
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+ 
+.blog-box{
+    width:350px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    margin: 20px 20px;
+ 
+}
+.blog-img{
+    width:100%;
+}
+.blog-img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: seagreen;
+    font-size: 0.9rem;
+}
+.blog-text .blog-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #272727;
+}
+.blog-text p{
+    color: #9b9b9b;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+.blog-text a{
+    color: #0f0f0f;
+}
+.blog-text a:hover{
+    color: seagreen;
+    transition: all ease 0.3s;
+}
+ 
+ 
+@media(max-width:1250px){
+ 
+    .blog-box{
+        width: 300px;
+    }
+} 
+@media(max-width:1100px){
+    .blog-box{
+        width:70%;
+    }
+}
+ 
+@media(max-width:550px){
+   
+    .blog-box{
+        margin: 20px 10px;
+        width: 100%;
+    }
+    #blog{
+        padding:20px;
+    }
+}
+ 
+
+.articles .button {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.articles .btn {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: aliceblue;
+    padding: 0.5rem 3rem;
+}
+
+footer {
+    background-color: #0ccf57;
+    padding: 3rem;
+}
+
+.icons {
+    text-align: center;
+}
+.icons .social i{
+    font-size: 2rem;
+    color: rgb(234, 224, 224);
+    padding: 1rem;
+    transition: all 0.4 ease;
+}
+
+.icons .social i:hover {
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.copyright p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: white;
+    margin: 2rem;
+}
+
+@media(max-width:600px){
+    .cards{
+        flex-direction: column;   
+    }
+}
