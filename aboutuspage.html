@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fortR.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2063e5009c.js" crossorigin="anonymous"></script>
+    <title>About Us - Trans Banjarbakula</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(51, 220, 121);
+            text-align: center;
+            font-family: poppins, 'sans serif';
+        }
+        .navigasi {
+            overflow: hidden;
+            background-color: #F7FFDF;
+            top: 0;
+        }
+  
+        .navigasi a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .pages a {
+            padding: 20px;
+        }
+        .pages a:first-child {
+            margin-left: 60px;
+        }
+        .navigasi a:hover {
+            color: #61f0a1;
+        }
+        
+        .navigasi a.active {
+            background-color: #F7FFDF;
+        }
+        .navigasi a.active img {
+            width: 150px;
+        }
+        .navigasi .icon {
+            display: none;
+        }
+        img {
+            width: 200px;
+            border-radius: 40px;
+        }
+        .aboutus {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .kotak {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+        }
+        .profile {
+            background-color: rgb(255, 254, 253);
+            height:400px;
+            margin: 30px 20px;
+            padding: 30px 20px;
+            border-radius: 40px;
+            box-shadow: 5px 5px ;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .social i {
+            font-size: 1.7rem;
+            margin: 5px;
+        }
+        /* Footer */
+
+        footer {
+            background-color: #0ccf57;
+            padding: 3rem;
+        }
+
+        .icons {
+            text-align: center;
+        }
+        .icons .social i{
+            font-size: 2rem;
+            color: rgb(234, 224, 224);
+            padding: 1rem;
+            transition: all 0.4 ease;
+        }
+
+        .icons .social i:hover {
+            color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .copyright p {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: white;
+            margin: 2rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navigasi .pages a {display: none;}
+            .navigasi a.icon {
+            float: right;
+            display: block;
+            }
+            .pages a:first-child {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .navigasi.responsive {position: relative;}
+            .navigasi.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            }
+            .navigasi.responsive .pages a {
+            float: none;
+            display: block;
+            text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigasi" id="navbanjarbakula">
+        <a href="#Logo" class="active"><img src="https://temanbus.com/wp-content/uploads/2020/05/kemenhub-temanbus.png" alt="logo kemenhub-temanbus"></a>
+        <div class="pages">
+          <a href="websiteProjek.html">Home</a>
+          <a href="#fasilitas">Fasilitas</a>
+          <a href="#rute">Rute</a>
+          <a href="aboutuspage.html">About Us</a>
+          <a href="Game/game.html">Game</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="team">
+        <h1>We Are Dreamy Grande Team!</h1>
+        <p>Here are members of our team:</p>
+    </div>
+    <div class="aboutus">
+        <div class="kotak">
+            <div class="profile">
+                <img src="img/leli_dev.jpg" alt="Nurleli irwan">
+                <h2>Nurlely</h2>
+                <h3>Web Developer</h3>
+                <p>I like speaking English!</p>
+                <div class="social">
+                    <i class="fab fa-facebook"><a href="https://www.facebook.com/yuna.asahi.90"></a></i>
+                    <i class="fab fa-whatsapp"><a href=""></a></i>
+                    <i class="fab fa-instagram"><a href="https://www.instagram.com/lilybreigdane04/"></a></i>
+                    <i class="fab fa-github"><a href="https://github.com/lelygrande"></a></i>
+                </div>
+            </div>
+        </div>
+    
+        <div class="kotak">
+            <div class="profile">
+                <img src="img/oline_dev.jpg" alt="Olyvia Ika Aibina">
+                <h2>Olyvia Ika Aibina</h2>
+                <h3>Web Developer</h3>
+                <p>Stray Kids biggest fan!</p>
+                <div class="social">
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="kotak">
+            <div class="profile">
+                <img src="img/dea_dev.png" alt="Dea Fidelma">
+                <h2>Dea Fidelma</h2>
+                <h3>Web Developer</h3>
+                <p>Idk</p>
+                <div class="social">
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <footer>
+        <div class="icons">
+            <div class="social">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> &copy; 2023 Dreamy Grande Team, all rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        // navbar responsive
+function navbar() {
+  var navbar = document.getElementById("navbanjarbakula");
+  if (navbar.className === "navigasi") {
+    navbar.className += " responsive";
+  } else {
+    navbar.className = "navigasi";
+  }
+  }
+    </script>
+</body>
+</html>

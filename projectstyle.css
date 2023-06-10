@@ -1,0 +1,406 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    box-sizing: border-box;
+}
+
+/* Navigasi Bar */
+.navigasi {
+    overflow: hidden;
+    background-color: #F7FFDF;
+    top: 0;
+  }
+  
+.navigasi a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.pages a {
+    padding: 20px;
+}
+.pages a:first-child {
+    margin-left: 60px;
+}
+.navigasi a:hover {
+    color: #61f0a1;
+}
+  
+.navigasi a.active {
+    background-color: #F7FFDF;
+}
+.navigasi a.active img {
+    width: 150px;
+}
+.navigasi .icon {
+    display: none;
+}
+
+/* Home */
+
+.home {
+    background-image: url(img/Desktop\ -\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.teks-home h1{
+    font-weight: 600;
+    padding: 125px 0px 13px 50px;
+
+}
+.teks-home p{
+    font-size: 14px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.login {
+    background-color: #0ccf57;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    
+}
+.login:hover{
+    background-color: white;
+    color: #0ccf57;
+    text-decoration: none;
+}
+
+.signup {
+    background-color: #0ccf57;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+.signup:hover{
+    background-color: white;
+    color: #0ccf57;
+    text-decoration: none;
+}
+.login , .signup{
+    text-decoration: none;
+    color: white;
+}
+
+/* fasilitas */
+.facility {
+    background-color: #fbf3eb;
+    padding: 4rem;
+}
+.heading {
+    padding-top: 50px;
+    text-align: center;
+}
+.heading span {
+    color: #61f0a1;
+    font-size: 30px;
+    font-weight: 700;
+}
+.heading h2 {
+    margin-top: 10px;
+}
+.row {
+    min-width: 418px;
+}
+.card-body {
+    height: 300px;
+}
+
+.facility-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    width: 228px;
+    height: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 9px 8px;
+}
+
+.facility-img img{
+    height: 170px;
+    width: 200px;
+    border-radius: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.facility .facility-btn {
+    text-decoration: none;
+    font-size: 13px;
+    width: fit-content;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: aliceblue;
+    padding: 9px 8px;
+    border-radius: 7px;
+    background-color: #61f0a1;
+    margin-top: 20px;
+}
+
+.facility-btn:hover{
+    background-color: white;
+    color: #0ccf57;
+}
+
+
+
+/* rute trans Banjarbakula */
+.map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 1440;
+    padding: 20px;
+    background-image: url(https://infopublik.id/assets/upload/headline//hub214.jpeg);
+}
+.mapRute {
+    padding-bottom: 20px;
+}
+.map p{
+    font-size: 15px;
+    color: white;
+}
+
+
+/* Bagian About Us */
+
+.about{
+    background-color: #fbf3eb;
+    display: flex;  
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    gap: 24px;
+    padding: 50px 40px;
+}
+
+.about-img img{
+    width: 350px;
+    margin-left: 40px;
+    border-radius: 40px;
+    box-shadow:20px 20px 50px 10px rgb(192, 255, 225);
+}
+.textdata {
+    text-align: center;
+    padding-top: 40px;
+}
+.textdata span{
+    font-size: 17px;
+    color: #61f0a1;      
+}
+.textdata a {
+    text-decoration: none;
+}
+.textdata p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.textdata h2 {
+    margin-top: 20px;
+}
+.textdata a{
+    background-color: #61f0a1;
+    color:white;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.textdata a:hover{
+    background-color: white;
+    color:#0ccf57;
+}
+
+
+
+
+/* Bagian Blog and News */
+/*--blog--------------------------*/
+#blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.blog-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.blog-heading span{
+    color: seagreen;
+}
+.blog-heading h3{
+    font-size: 2.4rem;
+    color: seagreen;
+    font-weight: 600;
+}
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+ 
+.blog-box{
+    width:350px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    margin: 20px 20px;
+ 
+}
+.blog-img{
+    width:100%;
+    height: auto;
+}
+.blog-img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: seagreen;
+    font-size: 0.9rem;
+}
+.blog-text .blog-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #272727;
+}
+.blog-text p{
+    color: #9b9b9b;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+.blog-text a{
+    color: #0f0f0f;
+    text-decoration: none;
+}
+.blog-text a:hover{
+    color: seagreen;
+    transition: all ease 0.3s;
+}
+ 
+/* Navbar Media Query */
+@media screen and (max-width: 600px) {
+    .navigasi .pages a {display: none;}
+    .navigasi a.icon {
+      float: right;
+      display: block;
+    }
+    .pages a:first-child {
+        margin-left: 0;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .navigasi.responsive {position: relative;}
+    .navigasi.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .navigasi.responsive .pages a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
+
+/* media query news content */
+@media(max-width:1250px){
+ 
+    .blog-box{
+        width: 300px;
+    }
+} 
+@media(max-width:1100px){
+    .blog-box{
+        width:70%;
+    }
+}
+ 
+@media(max-width:550px){
+   
+    .blog-box{
+        margin: 20px 10px;
+        width: 100%;
+    }
+    #blog{
+        padding:20px;
+    }
+}
+ 
+
+/* Footer */
+
+footer {
+    background-color: #0ccf57;
+    padding: 3rem;
+}
+
+.icons {
+    text-align: center;
+}
+.icons .social i{
+    font-size: 2rem;
+    color: rgb(234, 224, 224);
+    padding: 1rem;
+    transition: all 0.4 ease;
+}
+
+.icons .social i:hover {
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.copyright p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: white;
+    margin: 2rem;
+}
