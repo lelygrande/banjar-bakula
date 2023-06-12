@@ -64,7 +64,7 @@
 .login {
     background-color: #0ccf57;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     border-radius: 10px;
     margin-left: 50px;
@@ -81,7 +81,7 @@
 .signup {
     background-color: #0ccf57;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     border-radius: 10px;
     margin: 20px 0px;

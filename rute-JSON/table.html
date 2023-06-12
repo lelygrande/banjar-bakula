@@ -2,7 +2,54 @@
 <html>
 <head>
     <title>Rute-BanjarBakula</title>
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Navigasi Bar */
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: poppins;
+            box-sizing: border-box;
+        }
+        .navigasi {
+            overflow: hidden;
+            background-color: #F7FFDF;
+            top: 0;
+        }
+        
+        .navigasi a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .pages a {
+            padding: 20px;
+        }
+        .pages a:first-child {
+            margin-left: 60px;
+        }
+        .navigasi a:hover {
+            color: #61f0a1;
+        }
+        
+        .navigasi a.active {
+            background-color: #F7FFDF;
+        }
+        .navigasi a.active img {
+            width: 150px;
+        }
+        .navigasi .icon {
+            display: none;
+        }
+        
+
         h1 {
             background-color: aliceblue;
             margin: 50px auto;
@@ -33,13 +80,26 @@
             border-radius: 5px;
 
         }
-        img {
+        td img {
             width: 200px;
             height: 100px;
         }
     </style>
 </head>
 <body>
+    
+    <nav class="navigasi" id="navbanjarbakula">
+        <a href="#Logo" class="active"><img src="https://temanbus.com/wp-content/uploads/2020/05/kemenhub-temanbus.png" alt="logo kemenhub-temanbus"></a>
+        <div class="pages">
+          <a href="http://127.0.0.1:3000/websiteProjek.html">Home</a>
+          <a href="fasilitas/fasilitas.html">Fasilitas</a>
+          <a href="rute-JSON/table.html">Rute</a>
+          <a href="aboutuspage.html">About Us</a>
+          <a href="Game/game.html">Game</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
     <h1>RUTE BUS TRANS BANJAR BAKULA</h1>
     <table border="1px" cellspacing="10px">
         <tr>
@@ -68,5 +128,16 @@
             <td>Terminal Gambut Barakat - Kelurahan Landasan Ulin Selatan - LIK Liang Anggang - SDN Pandahan 2 - MTS Darul Amanah - Kantor Desa Liang Anggang - Indofood Permai - PT. Indofood - SMA Negeri 1 Bati-Bati - Kantor Desa Nusa Indah - PT. Japta Comfeed Indonesia - PT. Ciomas Adisatwa - Kantor Kecamatan Bati-Bati</td>
         </tr>
     </table>
+    <script>
+        // navbar responsive
+        function navbar() {
+        var navbar = document.getElementById("navbanjarbakula");
+        if (navbar.className === "navigasi") {
+            navbar.className += " responsive";
+        } else {
+            navbar.className = "navigasi";
+        }
+        }
+    </script>
 </body>
 </html>
