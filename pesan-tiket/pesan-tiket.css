@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+.tambah-data {
+    margin-left: 500px;
+    margin-bottom: 10px;
+    
+}
+
+body {
+    background: url(https://www.bingkaibanua.com/wp-content/uploads/2022/03/1647404552605-scaled.jpg?v=1647407418);
+}
+.btn {
+    background-color: rgb(80, 237, 80);
+    display: inline-block;
+    padding: 10px;
+    border: green;
+    border-radius: 0.25rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#btnEdit {
+    background-color: lightskyblue;
+    margin-right: 5px;
+}
+
+
+#btnHapus {
+    background-color: red;
+}
+
+
+.tabel {
+    margin: 20px;
+}
+
+
+table, th, td {
+    border: rgb(10, 215, 27) solid 2px;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+th, td {
+    padding: 5px 10px;
+    background-color: aliceblue;
+}
+
+
+thead {
+    background-color: rgb(192, 255, 172);
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+.inputModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.inputModal td, table{
+    border: none;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

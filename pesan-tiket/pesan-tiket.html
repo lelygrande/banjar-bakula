@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Tiket - Trans Banjarbakula</title>
+    <link rel="stylesheet" href="pesan-tiket.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan tiket Bus - Trans Banjarbakula</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pesan Tiket</h1>
+
+    <div class="tambah-data">
+        <button class="btn" id="btnTambah">Pesan Sekarang</button>
+    </div>
+
+
+    <div id="tabel">
+        <table id="tabel-main">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Penumpang</th>
+                    <th>Berangkat</th>
+                    <th>Tujuan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+
+            <div class="inputModal">
+                <h3 id="judulModal">Form Pemesanan</h3>
+                <table>
+                    <tr>
+                        <td><label for="nama">Nama</label></td>
+                        <td><input type="text" name="nama" id="nama"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="depart">Keberangkatan</label></td>
+                        <td><input type="text" name="depart" id="depart"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="arrival">Tujuan</label></td>
+                        <td><input type="text" name="arrival" id="arrival"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Submit" name="submit" id="submit" class="btn"></td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Edit Data -->
+    <div id="editModal" class="modal">
+
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+
+            <div class="inputModal">
+                <h3 id="judulModal">Edit Data</h3>
+                <table>
+                    <tr>
+                        <td><label for="nama">Nama</label></td>
+                        <td><input type="text" name="nama" id="namaEdit"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="depart">Keberangkatan</label></td>
+                        <td><input type="text" name="depart" id="departEdit"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="arrival">Tujuan</label></td>
+                        <td><input type="text" name="arrival" id="arrivalEdit"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Submit" name="submit" id="submitEdit" class="btn"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="pesan-tiket-script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getDatabase, ref, set, push, get, child, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+          // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5SyIWUbqap-SSG3LUPx-_L2NfcMhRfqk",
+            authDomain: "pesan-bus.firebaseapp.com",
+            databaseURL: "https://pesan-bus-default-rtdb.firebaseio.com",
+            projectId: "pesan-bus",
+            storageBucket: "pesan-bus.appspot.com",
+            messagingSenderId: "317424809199",
+            appId: "1:317424809199:web:ad63ee42f2b945475ed71a"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        
+
+        // inisialisasi tiap inputan
+        let nama = document.getElementById('nama');
+        let depart = document.getElementById('depart');
+        let arrival = document.getElementById('arrival');
+        var selectedKey;
+        var editModal = document.getElementById('editModal');
+
+
+        // kerangka isi tbody
+        var tbody = document.getElementById('data');
+        var no = 0;
+
+
+        function addItemToTable(key, nama, depart, arrival){
+            let trow = document.createElement('tr');
+
+            let table =` 
+                        <td>${++no}</td>
+                        <td>${nama}</td>
+                        <td>${depart}</td>
+                        <td>${arrival}</td>
+                `
+            
+            let td = document.createElement('td')
+
+
+            let btnEdit = document.createElement('button');
+            let t = document.createTextNode('Edit');
+            btnEdit.id = 'btnEdit';
+            btnEdit.classList.add('btn')
+            btnEdit.value = key
+            btnEdit.appendChild(t);
+            btnEdit.addEventListener('click', ()=>{
+                editModal.style.display = 'block';
+                selectedKey = btnEdit.value;
+            })
+            btnEdit.onclick = function(){showDataEdit(btnEdit.value)};
+            
+            let btnHapus = document.createElement('button');
+            t = document.createTextNode('Hapus');
+            btnHapus.id = 'btnHapus';
+            btnHapus.classList.add('btn')
+            btnHapus.value = key;
+            btnHapus.appendChild(t);
+            btnHapus.addEventListener('click', (key)=>{
+                hapusData(btnEdit.value)
+            })
+
+
+            trow.innerHTML = table;
+            td.appendChild(btnEdit);
+            td.appendChild(btnHapus);
+            trow.appendChild(td);
+
+
+            tbody.appendChild(trow);
+        }
+
+
+        function AddAllItemToTable(tiket){
+            no = 0;
+            tbody.innerHTML='';
+            tiket.forEach(element => {
+                addItemToTable(element.key, element.nama, element.depart, element.arrival);
+            })
+        }
+
+
+        // tambah data
+        function tambahData(){
+            let data = {
+                nama: nama.value,
+                depart: depart.value,
+                arrival: arrival.value
+            };
+
+
+            push(ref(database, 'tiketData'), data)
+            .then(()=>{
+                nama.value = '';
+                depart.value = '';
+                arrival.value = '';
+                alert('Data berhasil ditambahkan');
+            })
+            .catch((error)=>{
+                alert('Data gagal ditambahkan');
+            })
+        }
+
+
+        // assign button
+        document.getElementById('submit').addEventListener('click', tambahData);
+
+        // get data realtime
+        function getAllDataRealTime(){
+            const dbRef = ref(database, 'tiketData');
+            var tabel = document.getElementById('tabel');
+
+
+            onValue(dbRef, (snapshot)=>{
+                var tiket = []
+                snapshot.forEach(childSnapshot =>{
+                    let temp = childSnapshot.val();
+                    temp['key'] = childSnapshot.key;
+                    tiket.push(temp);
+                });
+            AddAllItemToTable(tiket);
+            })
+        }
+        window.onload = getAllDataRealTime();
+
+        // update data
+        var submitEdit = document.getElementById('submitEdit');
+        submitEdit.onclick = function(){updateData(selectedKey)};
+        
+        function updateData(id){
+            let data = {
+                nama: namaEdit.value,
+                depart: departEdit.value,
+                arival: arrivalEdit.value
+            };
+
+
+            update(ref(database, 'tiketData/'+id), data)
+            .then(()=>{
+                namaEdit.value = '';
+                departEdit.value = '';
+                arrivalEdit.value = '';
+                editModal.style.display = 'none'
+                alert('Data berhasil diupdate');
+            })
+            .catch((error)=>{
+                alert('Data gagal ditambahkan');
+            });
+        }
+
+        // hapus data
+        function hapusData(id){
+            remove(ref(database, 'tiketData/'+id))
+            .then(()=>{
+                alert('Data berhasil dihapus')
+            })
+            .catch((error)=>{
+                alert('Data gagal dihapus');
+            });
+        }
+
+</script>
+</body>
+</html>
+

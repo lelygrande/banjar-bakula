@@ -72,7 +72,7 @@ input {
     border: 1px solid goldenrod;
 }
 
-.submit {
+button {
     border: none;
     outline: none;
     padding: 10px;

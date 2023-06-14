@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bus Trans Banjarbakula</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <form id="authForm">
+                <h1>Register</h1>
+                <hr>
+                <Label for="username">Username</Label>
+                <input type="text" id="username" name="username" placeholder="Username">
+
+                <Label for="email">Email</Label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password">
+
+                <button id="signUp" name="signup_submit">Registrasi</button>
+        
+                <p>Belum punya akun? <a href="http://127.0.0.1:3000/Website Trans Banjarbakula/login Page/loginpage.html">Login</a></p>
+            </form>
+        </div>
+        <div class="right">
+            <img src="bis.png" alt="">
+        </div>
+    </div>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAhMVzp69IGPFlJi1MqCmFSrLNualaMs2g",
+    authDomain: "authentication-app-d619f.firebaseapp.com",
+    databaseURL: "https://authentication-app-d619f-default-rtdb.firebaseio.com",
+    projectId: "authentication-app-d619f",
+    storageBucket: "authentication-app-d619f.appspot.com",
+    messagingSenderId: "29443684863",
+    appId: "1:29443684863:web:5abbdac6f42bf53a550fca"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  signUp.addEventListener('click',(e) => {
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    set(ref(database, 'users/' + user.uid),{
+      username: username,
+      email: email
+    })
+    alert('user created!');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error)
+
+    alert('errorMessage');
+    // ..
+  });
+
+  });
+</script>
+
+</html>

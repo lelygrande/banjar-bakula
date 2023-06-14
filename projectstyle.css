@@ -173,11 +173,15 @@
 .map {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 1440;
     padding: 20px;
     background-image: url(https://infopublik.id/assets/upload/headline//hub214.jpeg);
 }
+.map .heading {
+    margin-bottom: 30px;
+}
+
 .mapRute {
     padding-bottom: 20px;
 }

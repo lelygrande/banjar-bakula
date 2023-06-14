@@ -14,10 +14,10 @@
                 <h1>Register</h1>
                 <hr>
                 <Label for="username">Username</Label>
-                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="text" id="nameInp" name="username" placeholder="Username">
 
                 <Label for="email">Email</Label>
-                <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                <input type="email" id="emailInp" name="email" placeholder="example@gmail.com">
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="password">
@@ -35,30 +35,28 @@
 //-------------------------------FIREBASE CONFIG-------------------------------//
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getDatabase, ref, set, child, get, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
        
         const firebaseConfig = {
-          apiKey: "AIzaSyBgkUDhL4mFJCuFJUiJBeMXymt1DdRT5X0",
-          authDomain: "registerloginbjrbkla.firebaseapp.com",
-          databaseURL: "https://registerloginbjrbkla-default-rtdb.firebaseio.com/",
-          projectId: "registerloginbjrbkla",
-          storageBucket: "registerloginbjrbkla.appspot.com",
-          messagingSenderId: "707752762927",
-          appId: "1:707752762927:web:5120154c4bc53160b930da"
+            apiKey: "AIzaSyBgkUDhL4mFJCuFJUiJBeMXymt1DdRT5X0",
+            authDomain: "registerloginbjrbkla.firebaseapp.com",
+            databaseURL: "https://registerloginbjrbkla-default-rtdb.firebaseio.com",
+            projectId: "registerloginbjrbkla",
+            storageBucket: "registerloginbjrbkla.appspot.com",
+            messagingSenderId: "707752762927",
+            appId: "1:707752762927:web:5120154c4bc53160b930da"
         };
+
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-
-        import { getDatabase, ref, set, child, get }
-            from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
-
         const db = getDatabase();
+        console.log(app)
 
  //------------------------INISIALISASI INPUT--------------------------------------//
         
-        const username = document.getElementById('username');
-        const email = document.getElementById('email');
-        const pass = document.getElementById('password');
+        const username = document.getElementById('nameInp');
+        const email = document.getElementById('emailInp');
         const submit = document.getElementById('signUp');
 
  //------------------------VALIDASI--------------------------------------//
@@ -66,6 +64,7 @@
         function Validation(){
             let userreg = /^[a-zA-Z0-9]{5,}$/;
             let emailreg = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+
 
             if(!userreg.test(username.value)){
                 alert("Nama hanya boleh memuat karakter huruf!");
@@ -88,24 +87,26 @@
             };
             const dbRef = ref(db);
 
-            get(get(dbref, "UsersList/" + username.value)).then((snapshot)=>{
+            child(dbRef, "UsersList/" + username.value).get().then((snapshot)=>{
                 if(snapshot.exists()){
                     alert("Akun Sudah Terdaftar!");
                 }
 
                 else{
-                    set(ref(db, "UsersList/" + username.value),
+                    set(ref(db, 'UsersList/', username.value),
                     {
-                        email: email.value,
                         username: username.value,
+                        email: email.value
                     })
                     .then(()=>{
                         alert("User berhasil registrasi");
                     })
                     .catch((error)=>{
-                        alert("error" + error)
+                        alert('Data gagal ditambahkan');
+                        console.log(error)
                     })
                 }
+                   
             });
         }
 
