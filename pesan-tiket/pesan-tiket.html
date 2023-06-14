@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesan Tiket - Trans Banjarbakula</title>
     <link rel="stylesheet" href="pesan-tiket.css">
+    <link rel="stylesheet" href="/projectstyle.css">
 </head>
 <body>
     <!DOCTYPE html>
@@ -18,13 +19,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navigasi" id="navbanjarbakula">
+        <a href="#Logo" class="active"><img src="https://temanbus.com/wp-content/uploads/2020/05/kemenhub-temanbus.png" alt="logo kemenhub-temanbus"></a>
+        <div class="pages">
+          <a href="http://127.0.0.1:3000/websiteProjek.html">Home</a>
+          <a href="fasilitas/fasilitas.html">Fasilitas</a>
+          <a href="rute-JSON/table.html">Rute</a>
+          <a href="aboutuspage.html">About Us</a>
+          <a href="Game/game.html">Game</a>
+          <a href="javascript:void(0);" class="icon" onclick="navbar()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
     <h1>Pesan Tiket</h1>
 
     <div class="tambah-data">
         <button class="btn" id="btnTambah">Pesan Sekarang</button>
     </div>
-
-
     <div id="tabel">
         <table id="tabel-main">
             <thead>
@@ -33,12 +44,12 @@
                     <th>Nama Penumpang</th>
                     <th>Berangkat</th>
                     <th>Tujuan</th>
+                    <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody id="data">
-
-
+                <!-- Data akan diisi disini -->
             </tbody>
         </table>
     </div>
@@ -65,6 +76,10 @@
                         <td><input type="text" name="arrival" id="arrival"></td>
                     </tr>
                     <tr>
+                        <td><label for="tanggal">Tanggal</label></td>
+                        <td><input type="date" name="date" id="date"></td>
+                    </tr>
+                    <tr>
                         <td></td>
                         <td><input type="button" value="Submit" name="submit" id="submit" class="btn"></td>
                     </tr>
@@ -77,15 +92,13 @@
 
     <!-- Modal Edit Data -->
     <div id="editModal" class="modal">
-
-
         <!-- Modal Content -->
         <div class="modal-content">
             <span class="close">&times;</span>
 
 
             <div class="inputModal">
-                <h3 id="judulModal">Edit Data</h3>
+                <h3 id="judulModal"></h3>
                 <table>
                     <tr>
                         <td><label for="nama">Nama</label></td>
@@ -99,6 +112,8 @@
                         <td><label for="arrival">Tujuan</label></td>
                         <td><input type="text" name="arrival" id="arrivalEdit"></td>
                     </tr>
+                        <td><label for="tanggal">Tanggal</label></td>
+                        <td><input type="date" name="date" id="dateEdit"></td>
                     <tr>
                         <td></td>
                         <td><input type="button" value="Submit" name="submit" id="submitEdit" class="btn"></td>
@@ -136,6 +151,7 @@
         let nama = document.getElementById('nama');
         let depart = document.getElementById('depart');
         let arrival = document.getElementById('arrival');
+        let tanggal = document.getElementById('date');
         var selectedKey;
         var editModal = document.getElementById('editModal');
 
@@ -145,7 +161,7 @@
         var no = 0;
 
 
-        function addItemToTable(key, nama, depart, arrival){
+        function addItemToTable(key, nama, depart, arrival, tanggal){
             let trow = document.createElement('tr');
 
             let table =` 
@@ -153,13 +169,13 @@
                         <td>${nama}</td>
                         <td>${depart}</td>
                         <td>${arrival}</td>
-                `
-            
+                        <td>${tanggal}</td>`
+
             let td = document.createElement('td')
 
 
             let btnEdit = document.createElement('button');
-            let t = document.createTextNode('Edit');
+            let t = document.createTextNode('Make Changes');
             btnEdit.id = 'btnEdit';
             btnEdit.classList.add('btn')
             btnEdit.value = key
@@ -171,7 +187,7 @@
             btnEdit.onclick = function(){showDataEdit(btnEdit.value)};
             
             let btnHapus = document.createElement('button');
-            t = document.createTextNode('Hapus');
+            t = document.createTextNode('Cancel');
             btnHapus.id = 'btnHapus';
             btnHapus.classList.add('btn')
             btnHapus.value = key;
@@ -195,7 +211,7 @@
             no = 0;
             tbody.innerHTML='';
             tiket.forEach(element => {
-                addItemToTable(element.key, element.nama, element.depart, element.arrival);
+                addItemToTable(element.key, element.nama, element.depart, element.arrival, element.tanggal);
             })
         }
 
@@ -205,15 +221,16 @@
             let data = {
                 nama: nama.value,
                 depart: depart.value,
-                arrival: arrival.value
+                arrival: arrival.value,
+                tanggal: tanggal.value
             };
-
 
             push(ref(database, 'tiketData'), data)
             .then(()=>{
                 nama.value = '';
                 depart.value = '';
                 arrival.value = '';
+                tanggal.value = '';
                 alert('Data berhasil ditambahkan');
             })
             .catch((error)=>{
@@ -251,7 +268,8 @@
             let data = {
                 nama: namaEdit.value,
                 depart: departEdit.value,
-                arival: arrivalEdit.value
+                arival: arrivalEdit.value,
+                tanggal: tanggal.value
             };
 
 
@@ -260,6 +278,7 @@
                 namaEdit.value = '';
                 departEdit.value = '';
                 arrivalEdit.value = '';
+                tanggal.value = '';
                 editModal.style.display = 'none'
                 alert('Data berhasil diupdate');
             })

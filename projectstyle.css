@@ -41,6 +41,7 @@
     display: none;
 }
 
+
 /* Home */
 
 .home {
@@ -176,7 +177,8 @@
     justify-content: space-around;
     width: 1440;
     padding: 20px;
-    background-image: url(https://infopublik.id/assets/upload/headline//hub214.jpeg);
+    background: url(https://infopublik.id/assets/upload/headline//hub214.jpeg);
+    background-size: cover;
 }
 .map .heading {
     margin-bottom: 30px;
@@ -190,6 +192,30 @@
     color: white;
 }
 
+/* Pemesanan Tiket */
+.tiket {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 1440;
+    padding: 20px;
+    background-color: #fbf3eb;
+}
+
+.book-img img{
+    width: 350px;
+    height: 350px;
+    border-radius: 40px;
+}
+
+.pesan-tiket {
+    margin: 50px 50px;
+}
+.pesan-tiket h2{
+    text-align: center;
+    margin: 30px auto;
+    font-weight: 700;
+}
 
 /* Bagian About Us */
 
@@ -201,6 +227,8 @@
     gap: 24px;
     padding: 50px 40px;
 }
+
+
 
 .about-img img{
     width: 350px;

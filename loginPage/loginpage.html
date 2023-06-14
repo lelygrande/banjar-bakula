@@ -19,7 +19,7 @@
                 <label for="password">Password</label>
                 <input id="userPassword" name="password" type="password" placeholder="password">
                 <button type="submit" id="login" class="submit" name="signup_submit">Login</button>
-                <p>Belum punya akun? <a href="registrasi.html">Sign In</a></p>
+                <p>Belum punya akun? <a href="registrationpage.html">Registrasi</a></p>
             </form>
         </div>
         <div class="right">
@@ -84,12 +84,28 @@
     }
   });
 }
-    login.addEventListener('click', function(event) {
-        event.preventDefault(); // Mencegah pengiriman form secara default
-        authenticateUser();
-        alert('Anda berhasil login')
-        window.location = 'http://127.0.0.1:3000/websiteProjek.html'
-        });
+
+  login.addEventListener('click', function(event) {
+      event.preventDefault(); // Mencegah pengiriman form secara default
+      authenticateUser();
+      alert('Anda berhasil login')
+      window.location = 'http://127.0.0.1:3000/websiteProjek.html'
+      });
+
+  // Remove login and register buttons on the specified page
+  const currentPageUrl = window.location.href;
+        if (currentPageUrl === 'http://127.0.0.1:3000/websiteProjek.html') {
+          const loginButton = document.getElementById('login');
+          const registerLink = document.querySelector('a[href="registrasi.html"]');
+  
+        if (loginButton) {
+          loginButton.style.display = 'none';
+        }
+  
+        if (registerLink) {
+          registerLink.style.display = 'none';
+        }
+      }
   </script>
 </html>
 

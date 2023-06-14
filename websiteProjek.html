@@ -24,7 +24,7 @@
     <a href="rute-JSON/table.html">Rute</a>
     <a href="aboutuspage.html">About Us</a>
     <a href="Game/game.html">Game</a>
-  <a href="javascript:void(0);" class="icon" onclick="navbar()">
+    <a href="javascript:void(0);" class="icon" onclick="navbar()">
     <i class="fa fa-bars"></i>
   </a>
 </nav>
@@ -35,6 +35,8 @@
     <h1><i>#KamiAdaUntukAnda</i></h1>
     <p>Bus Trans Banjarbakula kini hadir untuk Anda!<br>Ayo mulai gunakan Transportasi Umum</p>
     <p>Sayangi banua kita, mari mulai gunakan bus Trans Banjarbakula</p>
+    <a href="loginPage/loginpage.html" class="login">Login</a>
+    <a href="loginPage/registrationpage.html" class="signup">registrasi</a>
   </div>
 </section>
 
@@ -201,6 +203,18 @@
   </div>
 </section>
 
+<!-- Pemesanan Tiket -->
+<section class="tiket">
+  <div class="pesan-tiket">
+    <h2>Pesan Tiket Bus Bisa Disini</h2>
+    <a class="btn btn-warning btn-lg" href="pesan-tiket/pesan-tiket.html" role="button">Pesan Sekarang!</a>
+  </div>
+  <div class="book-img">
+    <img src="img/Book a ticket.png" alt="pesan tiket">
+  </div>
+</section>
+
+
 <!-- Bagian About Us -->
 <section class="about" id="aboutus">
   <div class="about-img">
@@ -232,7 +246,17 @@
 
   <!-- partial -->
 <script src="./script.js"></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+<script>
+  // Periksa apakah pengguna sudah login
+  var isLoggedIn = false; // Ganti dengan logika pengecekan login yang sesuai
+
+// Jika pengguna sudah login, sembunyikan tombol login
+if (isLoggedIn) {
+    var loginButton = parent.document.getElementById('login');
+    if (loginButton) {
+        loginButton.style.display = 'none';
+    }
+}
+</script>
 </body>
 </html>

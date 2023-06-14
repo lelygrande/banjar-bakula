@@ -8,8 +8,8 @@ h1 {
     text-align: center;
 }
 .tambah-data {
-    margin-left: 500px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -29,7 +29,7 @@ body {
 
 
 #btnEdit {
-    background-color: lightskyblue;
+    background-color: rgb(16, 185, 112);
     margin-right: 5px;
 }
 

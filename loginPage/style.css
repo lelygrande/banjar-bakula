@@ -26,6 +26,14 @@ body {
     width: 400px;
 }
 
+p a {
+    text-decoration: none;
+    color: rgb(7, 130, 32);
+    font-weight: 700;
+    background-color: greenyellow;
+    padding: 3px;
+    border-radius: 9px;
+}
 form {
     width: 300px;
     margin: 60px auto;
