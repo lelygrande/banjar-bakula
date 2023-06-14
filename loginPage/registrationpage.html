@@ -22,11 +22,12 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="password">
 
-                <button id="signUp" name="signup_submit">Registrasi</button>
+                <button type="submit" id="submit" name="signup_submit">Registrasi</button>
         
-                <p>Belum punya akun? <a href="http://127.0.0.1:3000/Website Trans Banjarbakula/login Page/loginpage.html">Login</a></p>
+                <p>Belum punya akun? <a href="loginpage.html">Login</a></p>
             </form>
         </div>
+
         <div class="right">
             <img src="bis.png" alt="">
         </div>
@@ -34,9 +35,9 @@
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getDatabase, ref, set, push, get, child, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -53,36 +54,53 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-  const auth = getAuth();
+  const db = getDatabase(app);
+  // const auth = getAuth();
 
-  signUp.addEventListener('click',(e) => {
+  // INISIALISASI INPUT
+  var email = document.getElementById('email');
+  var username = document.getElementById('username');
+  var pass = document.getElementById('password');
 
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+  const submit = document.getElementById('submit'); // Tombol
 
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
+  // MEMASUKKAN DATA KE FIREBASE
+  function RegisterUser() {
+    var emailValue = email.value;
+    var usernameValue = username.value;
+    var passwordValue = pass.value;
 
-    set(ref(database, 'users/' + user.uid),{
-      username: username,
-      email: email
-    })
-    alert('user created!');
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(error)
+    const dbRef = ref(db);
 
-    alert('errorMessage');
-    // ..
+    get(child(dbRef, "UserList/" + usernameValue.replace(/\./g, ","))).then((snapshot) => {
+        if (snapshot.exists()) {
+            alert("Akun Sudah Ada!");
+        } else {
+            set(ref(db, "UserList/" + usernameValue.replace(/\./g, ",")), {
+                username: usernameValue.replace(/\./g, ","),
+                email: emailValue,
+                password: passwordValue,
+            })
+                .then(() => {
+                    sessionStorage.setItem("username", usernameValue.replace(/\./g, ","));
+                    sessionStorage.setItem("password", passwordValue);
+                    alert("Akun anda telah berhasil ditambahkan, silakan login");
+                })
+                .catch((error) => {
+                    sessionStorage.setItem("username", usernameValue.replace(/\./g, ","));
+                    sessionStorage.setItem("password", passwordValue);
+                    alert('Akun gagal ditambahkan')
+                });
+        }
+    });
+}
+
+
+submit.addEventListener('click', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form secara default
+    RegisterUser();
   });
-
-  });
+  
 </script>
 
 </html>
