@@ -108,7 +108,7 @@
     text-align: center;
 }
 .heading span {
-    color: #61f0a1;
+    color: #175333;
     font-size: 30px;
     font-weight: 700;
 }
@@ -166,6 +166,10 @@
 .facility-btn:hover{
     background-color: white;
     color: #0ccf57;
+}
+
+.facility p {
+    font-size: 1.4rem;
 }
 
 
@@ -248,6 +252,7 @@
     text-decoration: none;
 }
 .textdata p {
+    font-size: 1.3rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }

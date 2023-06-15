@@ -24,7 +24,7 @@
 
                 <button type="submit" id="submit" name="signup_submit">Registrasi</button>
         
-                <p>Belum punya akun? <a href="loginpage.html">Login</a></p>
+                <p>Sudah punya akun? <a href="loginpage.html">Login</a></p>
             </form>
         </div>
 
@@ -74,7 +74,7 @@
 
     get(child(dbRef, "UserList/" + usernameValue.replace(/\./g, ","))).then((snapshot) => {
         if (snapshot.exists()) {
-            alert("Akun Sudah Ada!");
+            alert("Akun sudah terdaftar");
         } else {
             set(ref(db, "UserList/" + usernameValue.replace(/\./g, ",")), {
                 username: usernameValue.replace(/\./g, ","),
@@ -84,7 +84,7 @@
                 .then(() => {
                     sessionStorage.setItem("username", usernameValue.replace(/\./g, ","));
                     sessionStorage.setItem("password", passwordValue);
-                    alert("Akun anda telah berhasil ditambahkan, silakan login");
+                    alert("Terima kasih telah membuat akun! Akun Anda telah berhasil dibuat dan sekarang siap digunakan. Silakan login dengan menggunakan akun yang baru dibuat");
                 })
                 .catch((error) => {
                     sessionStorage.setItem("username", usernameValue.replace(/\./g, ","));
