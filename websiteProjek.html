@@ -129,7 +129,7 @@
     <span>Rute</span>
     <h2>Rute dari 4 koridor tersedia disini!</h2>
     <p>Ketahui rute bus Banjarbakula, lihat dimana bus dapat melakukan pemberhentian</p>
-    <a class="btn btn-success btn-lg" href="rute-JSON/table.html" role="button">Lihat Rute</a>
+    <a class="btn btn-success btn-lg" href="http://127.0.0.1:3000/rute-JSON/rute.html" role="button">Lihat Rute</a>
   </div>
   <div class="mapRute">
     <iframe src="https://www.google.com/maps/d/embed?mid=11RKbiTUGV8RelPLoy6Ci_HzvSsxXqXE&ehbc=2E312F" width="500" height="480"></iframe>
@@ -156,9 +156,9 @@
       <!--text--->
       <div class="blog-text">
         <span>18 July 2021</span>
-        <a href="artikel/article-1.html" class="blog-title">Harga Tiket, Rute, dan Jam Operasional Layanan Teman Bus Banjarmasin Terbaru</a>
+        <a href="http://127.0.0.1:3000/artikel/article-1.html" class="blog-title">Harga Tiket, Rute, dan Jam Operasional Layanan Teman Bus Banjarmasin Terbaru</a>
         <p>Bus Trans Banjarbakula diharapkan dapat mempermudah mobilisasi masyarakat di Kalimantan Selatan (Kalsel) karena sudah terkoneksi dengan Terminal Gambut Barakat KM 17 dan Terminal Induk KM 6.</p>
-        <a href="artikel/article-1.html">Read More</a>
+        <a href="http://127.0.0.1:3000/artikel/article-1.html">Read More</a>
       </div>
 
     </div>
@@ -173,9 +173,9 @@
       <!--text--->
       <div class="blog-text">
         <span>5 September 2022</span>
-        <a href="artikel/article-2.html" class="blog-title">Gratis Naik Bus Trans Banjarbakula Akan Disetop, Tarif Mulai Rp 3 Ribu hingga Rp 5 Ribu?</a>
+        <a href="http://127.0.0.1:3000/artikel/article-2.html" class="blog-title">Gratis Naik Bus Trans Banjarbakula Akan Disetop, Tarif Mulai Rp 3 Ribu hingga Rp 5 Ribu?</a>
         <p> Saat ini, Bus Trans Banjarbakula masih gratis bagi penumpang dengan sejumlah kecil rute di wilayah Provinsi Kalimantan Selatan</p>
-        <a href="artikel/article-2.html">Read More</a>
+        <a href="http://127.0.0.1:3000/artikel/article-2.html">Read More</a>
 
       </div>
 
@@ -230,11 +230,10 @@
 <footer>
   <div class="icons">
       <div class="social">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-github"></i>
-          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.facebook.com/TEMANBUS?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://twitter.com/teman_bus?t=ccz8_tufEykFHU7bfMfLyQ&s=08"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com/transbanjarbakula?igshid=MzRlODBiNWFlZA=="><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com/@TemanBus"><i class="fa-brands fa-youtube"></i></a>
       </div>
   </div>
   <div class="copyright">
@@ -243,18 +242,18 @@
 </footer>
 
   <!-- partial -->
-<script src="./script.js"></script>
 <script>
-  // Periksa apakah pengguna sudah login
-  var isLoggedIn = false; // Ganti dengan logika pengecekan login yang sesuai
 
-// Jika pengguna sudah login, sembunyikan tombol login
-if (isLoggedIn) {
-    var loginButton = parent.document.getElementById('login');
-    if (loginButton) {
-        loginButton.style.display = 'none';
-    }
-}
+// navbar responsive
+function navbar() {
+  var navbar = document.getElementById("navbanjarbakula");
+  if (navbar.className === "navigasi") {
+    navbar.className += " responsive";
+  } else {
+    navbar.className = "navigasi";
+  }
+  }
+
 </script>
 </body>
 </html>
